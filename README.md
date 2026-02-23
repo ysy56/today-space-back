@@ -30,8 +30,8 @@
 
 
 ### 1. 설계 문서
-* [초기 설계 문서(ERD/API)](링크)
-* [리팩토링 설계 문서(PostGIS 반영)](링크)
+* [초기 설계 문서(ERD/API)]([https://github.com/today-space/today-space-back](https://github.com/today-space/today-space-back?tab=readme-ov-file#-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%82%B4%EC%9A%A9))
+* [리팩토링 설계 문서(PostGIS 반영)](준비 중)
 
 ## 💡 Retrospective: 왜 리팩토링인가?
 > "측량 현장에서 QGIS로 데이터를 구축하며 데이터의 정확성이 서비스에 미치는 영향을 몸소 배웠습니다. 과거의 '오늘의 공간'은 단순히 기능을 구현하는 데 급급했지만, 이제는 **현장의 데이터 감각**을 **백엔드 기술**과 결합하여 더 가치 있는 서비스를 만들 수 있음을 증명하고자 합니다."
