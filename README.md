@@ -30,7 +30,7 @@
 
 
 ### 1. 설계 문서
-* [초기 설계 문서(ERD/API)]([https://github.com/today-space/today-space-back](https://github.com/today-space/today-space-back?tab=readme-ov-file#-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%82%B4%EC%9A%A9))
+* [초기 설계 문서(ERD/API)](https://github.com/today-space/today-space-back?tab=readme-ov-file#-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%82%B4%EC%9A%A9)
 * [리팩토링 설계 문서(PostGIS 반영)](준비 중)
 
 ## 💡 Retrospective: 왜 리팩토링인가?
