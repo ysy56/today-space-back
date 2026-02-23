@@ -1,79 +1,41 @@
-# 🏠 프로젝트 개요
-‘오늘의 공간’은 인테리어 아이템과 가구를 거래하고, 인테리어 팁과 아이디어를 공유하며, <br>
-안전하고 만족스러운 거래 환경을 제공하는 커뮤니티입니다.
-<br>
+# 🏠 오늘의 공간 (Today's Space)
+> **인테리어 이커머스 및 공간 정보 큐레이션 서비스** > *과거 팀 프로젝트를 기반으로, 9개월간의 **측량/GIS 실무 경험**을 녹여내어 **위치 기반 서비스(LBS)**로 고도화 중인 백엔드 리팩토링 저장소입니다.*
 
-## 🗓️ 프로젝트 기간
-### 2024.07.15 ~ 
-<br>
+## 📝 Project Overview
+* **프로젝트 성격**: 인테리어 상품 판매 및 사용자 위치 기반 쇼룸 안내 플랫폼
+* **주요 기능**: 상품 조회 및 결제, Redis 활용 인기 상품 랭킹, 위치 기반 근처 시공 업체 찾기
+* **개발 인원**: 1인 (Back-end Refactoring)
+* **진행 기간**: 2024.07 - 2024.08 (초기 개발) / **2026.02 - 진행 중 (리팩토링)**
 
-## 😺 팀원/역할분담
-|    리더    |    부리더    |    팀원    |    팀원    |                             
-|:----:|:----:|:----:|:----:|
-|    🌌 최영주    |    🐶 정연주    |    🐯 유균한    |    🦁 노상윤    |
-|    ![스크린샷 2024-08-02 오후 9 38 39](https://github.com/user-attachments/assets/b4a66f0d-1384-4c31-a0be-5fefca8838dc)|<img src="https://github.com/user-attachments/assets/481a5a70-4a5c-4674-a7d3-9789081eb5d0">|![스크린샷 2024-08-02 오후 9 38 31](https://github.com/user-attachments/assets/62184f6a-a762-4270-a8f7-850cf351cb57)|  ![스크린샷 2024-08-02 오후 9 38 46](https://github.com/user-attachments/assets/4fc32d59-17e4-48f1-b230-ad1bf4014d3a)    |
-|    데브옵스    |   백엔드 : product , payment   |    백엔드 : auth, mypage, chat    |    백엔드 : post, hashtag    |
+## 🛠 Tech Stack (Refactored)
+* **Language/Framework**: Java 17, Spring Boot 3.x
+* **Database**: **PostgreSQL (PostGIS)**, MongoDB, Redis
+* **Infrastructure**: Docker, Jenkins, AWS(S3, EC2), **Cloudtype (배포)**
+* **GIS Tool**: QGIS (데이터 정제 및 가공)
+
+## 🚀 Refactoring & Deep Dive (2026.02 ~)
+*과거의 기술적 부채를 해결하고, 실무에서 얻은 데이터 전문성을 결합하고 있습니다.*
+
+### 1. GIS 실무 지식의 결합 (**QGIS ↔ PostGIS**)
+* **Problem**: 초기 설계 시 위경도 좌표를 단순 텍스트로 저장하여 정밀한 거리 계산 및 공간 검색에 한계가 있었음.
+* **Improvement**: 9개월간의 측량 데이터 구축 경험을 바탕으로 **PostGIS** 도입.
+* **Focus**: 공간 인덱싱을 활용하여 '사용자 반경 내 쇼룸/시공업체 탐색' 기능의 **쿼리 성능 최적화**.
+
+### 2. 백엔드 아키텍처 및 보안 고도화
+* **Security**: 소스코드 내 노출된 민감 정보(API Key, DB PW)를 **환경 변수**로 분리하여 보안 취약점 해결.
+* **Modernization**: Java 17 및 Spring Boot 3.x 마이그레이션으로 최신 환경 대응.
+* **Infrastructure**: 유지 비용 최적화를 위해 기존 인프라를 **Cloudtype**으로 이전 및 자동화.
+
+## 🏗 System Architecture
 
 
+### 1. 설계 문서
+* [초기 설계 문서(ERD/API)](링크)
+* [리팩토링 설계 문서(PostGIS 반영)](링크)
 
-<br>
+## 💡 Retrospective: 왜 리팩토링인가?
+> "측량 현장에서 QGIS로 데이터를 구축하며 데이터의 정확성이 서비스에 미치는 영향을 몸소 배웠습니다. 과거의 '오늘의 공간'은 단순히 기능을 구현하는 데 급급했지만, 이제는 **현장의 데이터 감각**을 **백엔드 기술**과 결합하여 더 가치 있는 서비스를 만들 수 있음을 증명하고자 합니다."
 
-## 🛠️ 개발 환경
-*  __Tech__ : <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white">  <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/>
-*  __IDE__ : ![IntelliJ](https://img.shields.io/badge/IntelliJ-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
-*  __JDK__ : 17
-*  __DB__ : ![PostgreSQL](https://img.shields.io/badge/postgresql-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-<br>
-
-## 🌾 프로젝트 내용
-* ### ERD
-  <details>
-    <summary> ERD </summary>
-    <img src="https://github.com/user-attachments/assets/64eef2ab-1745-4824-8001-cb1cb988e1fa">
-  </details>
-  
-* ### 와이어 프레임
-  <details>
-    <summary> 와이어 프레임 </summary>
-    <img src="https://github.com/user-attachments/assets/7fee6691-f755-473d-9805-9215b7c18b9c">
-  </details>
-
-* ### API
-  <details>
-  <summary> AUTH </summary>
-    <img src="https://github.com/user-attachments/assets/6137f1f2-2524-4d6b-9b13-9a26ef2def74">
-  </details>
-  <details>
-  <summary> MYPAGE </summary>
-    <img src="https://github.com/user-attachments/assets/06dee8c6-56a1-4f2a-bbf4-94a13393f1a9">
-  </details>
-  <details>
-  <summary> PAYMENT </summary>
-    <img src="https://github.com/user-attachments/assets/ae65e273-0720-4029-9589-5c10f5ab7fcd">
-  </details>
-  <details>
-  <summary> PRODUCT </summary>
-    <img src="https://github.com/user-attachments/assets/2ca96e18-7b2a-41aa-adb8-2f8e2e155c24">
-  </details>
-  <details>
-  <summary> POST </summary>
-    <img src="https://github.com/user-attachments/assets/f9c42efb-f6b0-4875-8cc4-c791b6ddb1db">
-  </details>
-  <details>
-  <summary> HASHTAG </summary>
-    <img src="https://github.com/user-attachments/assets/5e0a0e4a-9839-47c5-b6a2-f60740207845">
-  </details>
-  <details>
-  <summary> CHATS </summary>
-    <img src="https://github.com/user-attachments/assets/530dd49f-44a8-40cd-8923-7b3d41de70ad">
-  </details>
-
-<br>
-
-## 🌟 팀 목표 및 규칙
-|    팀 규칙    |    목표 기술    |    최종 MVP    |
-|:----:|:----:|:----:|
-|🤝 적극적으로 소통하기 <br> 📑 계획표 잘 작성하기 <br> 📝 issue 잘 작성하기 <br> 📆 일정 관리 작성 후 신경쓰며 코딩 <br> 📮 사소한 트러블 슈팅도 공유하기 |배포 : CI/CD(젠킨스), Docker(v), AWS(S3, EC2) <br> DB : PostgreSql, MongoDB <br> 프론트 : React <br> Redis, Https, | 1. 로그인 / 회원가입 / 회원탈퇴 <br> - JWT 토큰 발급을 통한 로그인 <br> - 소셜 로그인 <br><br> 2. 쇼핑(번개장터) CRUD <br> - 이미지 포함 <br> - 제목 검색 <br> - 후기 작성 <br><br> 3. 결제 <br><br>4. 마이페이지 <br> - 내 게시글, 찜, 내 상품, 후기 조회 <br><br> 5. 실시간 채팅 <br><br> 6. 게시글(인스타) / 댓글 CRUD <br> - 이미지 포함 <br> - 해시태그 검색 |
-<br>
-
-[📑 오늘의 공간 노션](https://teamsparta.notion.site/79e3ff8ab6454fcb893d48b368ee9e52)
+## 🔗 관련 문서 및 링크
+* **[Live Demo]** (준비 중)
+* **[Troubleshooting Blog]** (링크 예정)
